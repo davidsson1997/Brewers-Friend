@@ -1,0 +1,409 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Ensure html and body take up full height of the viewport */
+html, body {
+    height: 100%;
+
+}
+
+/* Main content area */
+.main-content {
+    flex: 1;
+    padding: 0px; /* Add some padding for content */
+    margin-top: calc(var(--navbar-height, 120px));
+    margin-bottom: calc(var(--footer-height, 60px));
+    overflow-y: auto; /* Makes the content scrollable */
+    padding-top: 80px; /* Ensure content doesn't go under the bottom bar */
+}
+
+/* Topbar styling */
+.topbar {
+    background-color: #505050;
+    color: rgb(255, 255, 255);
+    padding: 0px 20px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 10px;
+    font-style: italic;
+    position: fixed;
+    top: 0; /* Fix it at the top */
+    left: 0;
+    width: 100%; /* Ensure it spans the full width */
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+/* Top Navigation Bar */
+.navbar {
+    background-color: hwb(44 0% 0%);
+    color: rgb(255, 255, 255);
+    padding: 35px;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: 40px;
+
+}
+
+/* Navbar Title */
+.navbar-title {
+    color: rgb(0, 0, 0);
+    padding: 0px 20px;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+/* Links Container */
+.navbar-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 10px;
+    margin-top: 10px;  /* Moves links down a little */
+    margin-bottom: -15px;
+}
+
+/* Navigation Links */
+.navbar a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin: 0 14px;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.navbar a.active {
+    text-decoration: underline; /* Keep the underline */
+}
+
+
+/* Bottombar styling */
+.bottombar {
+    background-color: #242424;
+    color: white;
+    padding: 20px;
+    padding-top: 30px;
+    padding-left: 30px;
+    text-align: left;
+    position: fixed;
+    left: 0;
+    width: 100%;
+}
+
+.brews-container-index {
+    display: flex; /* Aligns children (Reminders & Active Brews) in a row */
+    gap: 20px; /* Adds space between them */
+    align-items: flex-start; /* Aligns both sections to the top */
+    padding-top: 200px;
+}
+
+.reminders-section {
+  width: 800px;
+}
+
+.active-brews-section {
+    width: 1000px;
+}
+
+/* Sections (for main content) */
+section {
+    background: white;
+    padding: 20px;
+    border-radius: 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    margin-top: 20px;
+    padding-left: 100px;
+}
+
+/* Lists */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #3f3f3f;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#finishBrewForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#finishBrewForm label {
+    margin-bottom: 5px;
+}
+
+#finishBrewForm input {
+    margin-bottom: 15px;
+    padding: 8px;
+}
+
+#finishBrewForm button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#finishBrewForm button:hover {
+    background-color: #45a049;
+}
+
+.brew-container {
+    display: flex;
+    flex-direction: row; /* Align the barrel and brew info horizontally */
+    align-items: center; /* Vertically center the content */
+    margin-bottom: 10px; /* Optional: Adds spacing between each brew item */
+}
+
+.brew-info {
+    flex-grow: 1; /* This makes the brew info take up the available space */
+    display: flex;
+    flex-direction: column; /* Align the brew name, gravity, and timer vertically */
+}
+
+.barrel {
+    width: 100px;
+    height: auto;
+    margin-left: 20px; /* Push barrel away from text */
+}
+
+.button-container {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: 10px; /* Push buttons below text */
+}
+
+.button-container button {
+    margin-bottom: 5px; /* Space between buttons */
+}
+
+.bottleBrewBtn, .finishBrewBtn {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.bottleBrewBtn {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+}
+
+.bottleBrewBtn:hover {
+    background-color: #e67e22;
+}
+
+.finishBrewBtn {
+    background-color: #09b403;
+    color: white;
+    border: none;
+}
+
+.finishBrewBtn:hover {
+    background-color: #1a8100;
+}
+.brew-item {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.brew-info-container {
+    display: flex;
+    align-items: center; /* Align barrel with text */
+    width: 100%;
+}
+
+.brew-text-container {
+    display: flex;
+    flex-direction: column; /* Stack text & buttons vertically */
+    width: 300px; /* Ensures consistent width */
+    min-width: 300px; /* Prevents shrinking */
+    max-width: 300px; /* Prevents growing */
+    word-wrap: break-word; /* Ensures text wraps */
+    overflow-wrap: break-word; /* Ensures text breaks properly */
+}
+
+
+#newBrewForm {
+    display: flex;
+    flex-direction: column; /* Stack fields vertically */
+    width: 500px;
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#newBrewForm label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#newBrewForm input,
+#newBrewForm textarea {
+    width: 100%; /* Ensure full width */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#newBrewForm textarea {
+    resize: vertical; /* Allow resizing vertically */
+}
+
+#newBrewForm button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#newBrewForm button:hover {
+    background-color: #45a049;
+}
+
+.new-brew-header {
+    margin-bottom: 20px;
+    font-size: 28px;
+    margin-top: 0px;
+    font-weight: bold;
+    color: #333;
+}
+
+.new-brew-container {
+    display: flex;
+    gap: 40px; /* Space between form and animation */
+    margin-top: 200px;
+    margin-left: 80px;
+}
+
+#newBrewForm {
+    display: flex;
+    flex-direction: column; /* Stacks form elements vertically */
+    
+}
+
+.new-brew-animation {
+    width: 400px; /* Adjust as needed */
+    height: 400px;
+    margin-top: 250px;
+}
+
+.storage-container {
+    display: flex;
+    gap: 70px; /* Space between form and animation */
+    margin-top: 200px;
+}
+
+.storage-item {
+    padding: 10px;
+    margin: 10px 0;
+    margin-right: 80px;
+    background: #684427a8;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 750px;
+}
+
+.storage-info-container {
+    display: flex;
+    flex-direction: column;
+    
+  
+}
+
+.storage-text-container span {
+    display: block;
+    margin-top: 5px;
+}
+
+

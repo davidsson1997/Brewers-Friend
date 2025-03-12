@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Brew App</title>
+    
+    <!-- Link to External CSS File -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Lato:wght@400;700&family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="topbar">
+        <h2 class="topbar-top">Västerport fermentering och mjödbryggning EST 2024</h2>
+    </div>
+
+    <div class="navbar">
+        <h2 class="navbar-title">Brewers Friend</h2>
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="activeBrews.html">Active Brews</a>
+            <a href="newBrew.html">New Brew</a>
+            <a href="finishedBrews.html">Finished Brews</a>
+            <a href="storage.html">Storage</a>
+        </div>
+        
+    </div>
+
+    <!-- Main content wrapper -->
+    <div class="main-content">
+        
+
+        <!-- Active Brews List -->
+        
+        <section>
+            <h2>Active Brews</h2>
+            <ul id="activeBrewsList">
+                <!-- Brews will be listed here -->
+            </ul>
+        </section>
+
+        <!-- Bottling Modal -->
+        <div id="bottleModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span> <!-- Close Button -->
+                <h2>Bottle Brew</h2>
+    
+                <label for="bottledDate">Date Bottled:</label>
+                <input type="date" id="bottledDate" required><br>
+    
+                <label for="numberOfBottles">Number of Bottles:</label>
+                <input type="number" id="numberOfBottles" required><br>
+    
+                <label for="finalABV">Final ABV:</label>
+                <input type="number" id="finalABV" step="any" required><br>
+    
+                <label for="finalGravity">Final Gravity (SG):</label>
+                <input type="number" id="finalGravity" step="any" required><br>
+    
+                <label for="notes">Notes:</label><br>
+                <textarea id="notes" rows="4" cols="50" required></textarea><br>
+    
+                <button type="button" onclick="bottleBrew()">Bottle Brew</button>
+            </div>
+        </div>
+
+        <!-- Finish Brew Confirmation Modal -->
+        <div id="finishBrewModal" class="modal">
+            <div class="modal-content">
+                <span id="closeFinishBrewModal" class="close">&times;</span>
+                <h2>Are you sure you want to finish this brew?</h2>
+                <p id="finishBrewText"></p>
+                <button id="finishBrewYes">Yes</button>
+                <button id="finishBrewNo">No</button>
+            </div>
+        </div>
+
+    </div> <!-- end of main-content -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Västerport Fermentering och Mjödbryggning. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

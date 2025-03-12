@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Brew App</title>
+    
+    <!-- Link to External CSS File -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Lato:wght@400;700&family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="topbar">
+        <h2 class="topbar-top">Västerport fermentering och mjödbryggning EST 2024</h2>
+    </div>
+
+    <div class="navbar">
+        <h2 class="navbar-title">Brewers Friend</h2>
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="activeBrews.html">Active Brews</a>
+            <a href="newBrew.html">New Brew</a>
+            <a href="finishedBrews.html">Finished Brews</a>
+            <a href="storage.html">Storage</a>
+        </div>
+        
+    </div>
+
+    <div class="new-brew-container">
+        <form id="newBrewForm">
+            <h2 class="new-brew-header">Create a New Brew</h2>
+    
+            <label for="batchId">Batch ID / Number</label>
+            <input type="text" id="batchId" required>
+    
+            <label for="batchName">Name of Batch</label>
+            <input type="text" id="batchName" required>
+    
+            <label for="totalVolume">Total Volume</label>
+            <input type="text" id="totalVolume" required>
+    
+            <label for="originalGravity">Original Gravity</label>
+            <input type="text" id="originalGravity" required>
+    
+            <label for="startDate">Fermentation Start Date</label>
+            <input type="date" id="startDate" required>
+    
+            <label for="notes">Notes</label>
+            <textarea id="notes"></textarea>
+    
+            <button type="submit">Create Brew</button>
+        </form>
+    
+        <div class="new-brew-icon-container">
+             <!-- New Animation GIF -->
+         
+            <img src="src/analysis.gif" alt="New Brew Animation" class="new-brew-animation">
+            
+        </div>
+       
+
+    </div>
+    
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Västerport Fermentering och Mjödbryggning. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
